@@ -1,2 +1,1 @@
-# gatsby-boilerplate
-👾Gatsby v2 boilerplate
+#👾Gatsby v2 boilerplate
