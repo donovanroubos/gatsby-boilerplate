@@ -45,9 +45,9 @@ const ComponentLibrary = () => (
         <h2>Inputs</h2>
 
 
-        <Input type="text" label="Text" />
-        <Input type="password" label="Password" />
-        <Input label="Disabled" disabled />
+        <Input type="text" label="Text" name="text-input"/>
+        <Input type="password" label="Password" name="password"/>
+        <Input type="text" label="Disabled" disabled name="disabled"/>
       </div>
     </main>
   </Layout>

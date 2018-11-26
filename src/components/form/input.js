@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-class Input extends Component {
-  render() {
+const Input = ({props, label}) => (
+  <div className="input">
+    <input {...props} placeholder={label} />
+    {
+      label && <label>{label}</label>
+    }
+  </div>
+)
 
-    const {
-      label
-    } = this.props
-
-    return (
-      <div className="input">
-        <input {...this.props} placeholder={label}/>
-        {
-          label && <label>{label}</label>
-        }
-      </div>
-    )
-  }
+Input.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired
 }
 
 export default Input
