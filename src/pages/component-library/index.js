@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../../layouts'
 import Button from '../../components/button'
+import Input from '../../components/form/input'
 
 const ComponentLibrary = () => (
   <Layout>
@@ -11,6 +12,7 @@ const ComponentLibrary = () => (
         <ul>
           <li><a href="#text">Text</a></li>
           <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#inputs">Inputs</a></li>
         </ul>
       </div>
 
@@ -37,6 +39,15 @@ const ComponentLibrary = () => (
         <Button text="Disabled" size="lg" style="primary" disabled />
 
         <Button text="Full width" size="lg" style="primary" fullWidth />
+      </div>
+
+      <div className="block inputs" id="inputs">
+        <h2>Inputs</h2>
+
+
+        <Input type="text" label="Text" />
+        <Input type="password" label="Password" />
+        <Input label="Disabled" disabled />
       </div>
     </main>
   </Layout>
