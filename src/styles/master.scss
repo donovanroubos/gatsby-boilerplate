@@ -1,6 +1,7 @@
 /* Base */
 @import './base/variables';
 @import './base/reset';
+@import './base/base';
 
 /* Helpers */
 @import './helpers/animations';
@@ -8,7 +9,9 @@
 
 /* Pages */
 @import './pages/404';
+@import './pages/style-guide';
 
 /* Components */
 @import './components/header';
 @import './components/footer';
+@import './components/button';

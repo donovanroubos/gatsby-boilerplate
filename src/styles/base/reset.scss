@@ -25,8 +25,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {
-	line-height: 1;
+html, body {
+  line-height: 1;
+  scroll-behavior: smooth;
 }
 
 ol, ul {
