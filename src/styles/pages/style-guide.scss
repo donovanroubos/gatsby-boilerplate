@@ -13,7 +13,8 @@
 
     .btn,
     .input,
-    .checkbox-wrapper {
+    .checkbox-wrapper,
+    .radio-option-wrapper {
       &:not(:last-child) {
         margin-bottom: 8px;
       }
