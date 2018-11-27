@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../../layouts'
 import Button from '../../components/button'
 import Input from '../../components/form/input'
+import Checkbox from '../../components/form/checkbox'
 
 const ComponentLibrary = () => (
   <Layout>
@@ -13,6 +14,7 @@ const ComponentLibrary = () => (
           <li><a href="#text">Text</a></li>
           <li><a href="#buttons">Buttons</a></li>
           <li><a href="#inputs">Inputs</a></li>
+          <li><a href="#checkbox">Checkbox</a></li>
         </ul>
       </div>
 
@@ -44,10 +46,16 @@ const ComponentLibrary = () => (
       <div className="block inputs" id="inputs">
         <h2>Inputs</h2>
 
+        <Input type="text" label="Text" name="text-input" />
+        <Input type="password" label="Password" name="password" />
+        <Input type="text" label="Disabled" disabled name="disabled" />
+      </div>
 
-        <Input type="text" label="Text" name="text-input"/>
-        <Input type="password" label="Password" name="password"/>
-        <Input type="text" label="Disabled" disabled name="disabled"/>
+      <div className="block" id="checkbox">
+        <h2>Checkbox</h2>
+
+        <Checkbox />
+        <Checkbox disabled />
       </div>
     </main>
   </Layout>

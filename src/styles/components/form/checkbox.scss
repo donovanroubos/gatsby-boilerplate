@@ -1,0 +1,37 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $light-gray;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"] + span {
+    background: $blue;
+    margin: 2px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: inline-block;
+    border-radius: 100%;
+    visibility: hidden;
+    transition: $transition;
+    opacity: 0;
+  }
+
+  input[type="checkbox"]:checked + span {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  input[type="checkbox"]:disabled + span {
+    background: $light-gray;
+    visibility: visible;
+    opacity: 1;
+  }
+}

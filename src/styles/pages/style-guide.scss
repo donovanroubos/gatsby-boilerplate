@@ -11,7 +11,9 @@
       margin-bottom: 32px;
     }
 
-    .btn, .input {
+    .btn,
+    .input,
+    .checkbox {
       &:not(:last-child) {
         margin-bottom: 8px;
       }
@@ -24,7 +26,7 @@
 
       &:hover {
         text-decoration: underline;
-        color: rgb(0, 81, 255);
+        color: $blue;
       }
     }
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const Input = ({props, label}) => (
+const Input = ({label, ...props}) => (
   <div className="input">
-    <input {...props} placeholder={label} />
+    <input placeholder={label} {...props} />
     {
       label && <label>{label}</label>
     }
