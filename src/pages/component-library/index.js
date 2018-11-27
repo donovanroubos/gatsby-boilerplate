@@ -54,8 +54,9 @@ const ComponentLibrary = () => (
       <div className="block" id="checkbox">
         <h2>Checkbox</h2>
 
-        <Checkbox />
         <Checkbox disabled />
+        <Checkbox label="Checkbox name" />
+        <Checkbox label="Checkbox name" disabled />
       </div>
     </main>
   </Layout>

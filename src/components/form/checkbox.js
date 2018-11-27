@@ -9,6 +9,8 @@ class Checkbox extends Component {
     }
 
     this.toggleCheck = this.toggleCheck.bind(this)
+
+    this.id = Math.random().toString().replace(/0\./, '')
   }
 
   toggleCheck() {
@@ -21,12 +23,19 @@ class Checkbox extends Component {
   render() {
 
     const { isChecked } = this.state
-    const { props } = this
+    const { label, disabled } = this.props
 
     return (
-      <div className="checkbox" onClick={this.toggleCheck}>
-        <input ref="checkbox" type="checkbox" checked={isChecked} {...props} />
-        <span></span>
+      <div className="checkbox-wrapper">
+        <div className="checkbox" onClick={this.toggleCheck}>
+          <input id={this.id} ref="checkbox" type="checkbox" checked={isChecked} disabled={disabled} />
+          <span>&#10003;</span>
+        </div>
+        {
+          typeof label !== 'undefined' && (
+            <label htmlFor={this.id} className={`${disabled ? 'disabled' : ''}`}>{label}</label>
+          )
+        }
       </div>
     )
   }
