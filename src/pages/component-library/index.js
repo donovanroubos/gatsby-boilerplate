@@ -4,6 +4,7 @@ import Layout from '../../layouts'
 import Button from '../../components/button'
 import Input from '../../components/form/input'
 import Checkbox from '../../components/form/checkbox'
+import RadioButton from '../../components/form/radio-option'
 
 const ComponentLibrary = () => (
   <Layout>
@@ -55,8 +56,18 @@ const ComponentLibrary = () => (
         <h2>Checkbox</h2>
 
         <Checkbox disabled />
-        <Checkbox label="Checkbox name" />
-        <Checkbox label="Checkbox name" disabled />
+        <Checkbox label="Checkbox" />
+        <Checkbox label="Checkbox" disabled />
+      </div>
+
+      <div className="block" id="radio-button">
+        <h2>Radio button</h2>
+
+        <RadioButton disabled />
+        <RadioButton label="Radio button 2" disabled />
+        <RadioButton name="test-123" value="Radio button 3" label="Radio button 3" />
+        <RadioButton name="test-123" value="Radio button 4" label="Radio button 4" />
+        <RadioButton name="test-123" value="Radio button 5" label="Radio button 5" />
       </div>
     </main>
   </Layout>
