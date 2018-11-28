@@ -40,6 +40,7 @@ const ComponentLibrary = () => (
         <Button text="Secondary large" size="lg" style="secondary" />
 
         <Button text="Disabled" size="lg" style="primary" disabled />
+        <Button text="Disabled" size="lg" style="secondary" disabled />
 
         <Button text="Full width" size="lg" style="primary" fullWidth />
       </div>
