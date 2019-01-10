@@ -14,7 +14,8 @@
     .btn,
     .input,
     .checkbox-wrapper,
-    .radio-option-wrapper {
+    .radio-option-wrapper,
+    .select {
       &:not(:last-child) {
         margin-bottom: 8px;
       }
