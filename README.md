@@ -14,5 +14,5 @@ A Gatsby v2 boilerplate with default project settings and a component library in
  - [ ] Button
 
  ### Layout
- - [ ] Header
- - [ ] Footer
+ - [x] Header
+ - [x] Footer
