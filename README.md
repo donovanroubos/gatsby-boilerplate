@@ -1,7 +1,7 @@
 # 👾 Gatsby v2 boilerplate
 A Gatsby v2 boilerplate with default project settings and a component library included some common components.
 
-## Default component list
+## Common components
 
 ### Form
  - [x] Checkbox
@@ -11,7 +11,7 @@ A Gatsby v2 boilerplate with default project settings and a component library in
  - [ ] Slider input
 
 ### Global
- - [ ] Button
+ - [x] Button
 
  ### Layout
  - [x] Header
