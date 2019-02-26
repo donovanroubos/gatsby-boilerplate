@@ -35,9 +35,9 @@ class Select extends React.Component {
             Select one
           </option>
           {
-            options.map(({ label ,value }) =>
-              <option value={value}>{label}</option>
-            )
+            options.map(({ label ,value }, idx) => (
+              <option value={value} key={idx}>{label}</option>
+            ))
           }
         </select>
 
@@ -64,10 +64,11 @@ Select.defaultProps = {
   ]
 }
 
-Select.PropTypes = {
+Select.propTypes = {
   options: PropTypes.shape({
-    value: PropTypes.string.isRequired
-  }).isRequired
+    label: PropTypes.string,
+    value: PropTypes.string
+  })
 }
 
 export default Select

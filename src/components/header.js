@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = (props) => (
+const Header = () => (
   <header className="header">
     <div className="logo">Logo</div>
     <nav className="nav">

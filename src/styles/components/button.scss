@@ -11,11 +11,11 @@
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: .5;
     cursor: not-allowed;
     box-shadow: none;
   }
-M
+
   &.full-width {
     width: 100%;
   }
