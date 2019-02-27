@@ -52,22 +52,22 @@ const ComponentLibrary = () => (
 
         <Input type="text" label="Text" name="text-input" />
         <Input type="password" label="Password" name="password" />
-        <Input type="text" label="Disabled" disabled name="disabled" />
+        <Input type="text" label="Disabled" isDisabled name="disabled" />
       </div>
 
       <div className="block" id="checkbox">
         <h2>Checkbox</h2>
 
-        <Checkbox disabled />
+        <Checkbox isDisabled />
+        <Checkbox label="Checkbox" isDisabled />
         <Checkbox label="Checkbox" id="checkbox-1" />
-        <Checkbox label="Checkbox" disabled />
       </div>
 
       <div className="block" id="radio-button">
         <h2>Radio button</h2>
 
-        <RadioButton disabled />
-        <RadioButton label="Radio button 2" disabled />
+        <RadioButton isDisabled />
+        <RadioButton label="Radio button 2" isDisabled />
         <RadioButton name="test-123" value="Radio button 3" label="Radio button 3" />
         <RadioButton name="test-123" value="Radio button 4" label="Radio button 4" />
         <RadioButton name="test-123" value="Radio button 5" label="Radio button 5" />
@@ -75,8 +75,7 @@ const ComponentLibrary = () => (
 
       <div className="block" id="select">
         <h2>Select</h2>
-
-        <Select disabled />
+        <Select isDisabled />
         <Select />
       </div>
     </main>

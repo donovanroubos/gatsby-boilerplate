@@ -7,24 +7,22 @@ const Meta = ({
     title,
     image
   }
-}) => {
-  return (
-    <Helmet>
-      {/* General tags */}
-      <title>Site name {title ? `- ${title}` : ''}</title>
+}) => (
+  <Helmet>
+    {/* General tags */}
+    <title>{`Site name ${title ? `- ${title}` : ''}`}</title>
 
-      {/* OpenGraph tags */}
-      {title && <meta property="og:title" content={title} />}
-      {image && <meta property="og:image" content={image} />}
-      {image && <meta property="og:image:width" content={image ? '800' : '1198'} />}
-      {image && <meta property="og:image:height" content={image ? '400' : '627'} />}
+    {/* OpenGraph tags */}
+    {title && <meta property="og:title" content={title} />}
+    {image && <meta property="og:image" content={image} />}
+    {image && <meta property="og:image:width" content={image ? '800' : '1198'} />}
+    {image && <meta property="og:image:height" content={image ? '400' : '627'} />}
 
-      {/* Twitter Card tags */}
-      {title && <meta name="twitter:title" content={title} />}
-      {image && <meta name="twitter:image" content={image} />}
-    </Helmet>
-  )
-}
+    {/* Twitter Card tags */}
+    {title && <meta name="twitter:title" content={title} />}
+    {image && <meta name="twitter:image" content={image} />}
+  </Helmet>
+)
 
 Meta.propTypes = {
   metaData: PropTypes.shape({

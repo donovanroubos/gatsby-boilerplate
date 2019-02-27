@@ -1,19 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-const Input = ({label, ...props}) => (
-  <div className="input">
-    <input placeholder={label} {...props} />
-    {
-      label && <label>{label}</label>
-    }
-  </div>
-)
+// Utils
+import { generateId } from '../../utils'
+
+const Input = ({
+  label,
+  isDisabled,
+  ...props
+}) => {
+  const id = generateId()
+
+  return (
+    <div className="input">
+      <input id={id} placeholder={label} disabled={isDisabled} {...props} />
+      {
+        label && <label htmlFor={id}>{label}</label>
+      }
+    </div>
+  )
+}
 
 Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   name: PropTypes.string.isRequired
 }
 
