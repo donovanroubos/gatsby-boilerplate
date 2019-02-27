@@ -31,11 +31,11 @@ class Select extends React.Component {
           disabled={isDisabled}
           onChange={e => this.handleChange(e)}
         >
-          <option value="Select one" selected>
+          <option value="Select one" defaultValue>
             Select one
           </option>
           {
-            options.map(({ label ,value }, idx) => (
+            options.map(({ label, value }, idx) => (
               <option value={value} key={idx}>{label}</option>
             ))
           }
@@ -65,10 +65,10 @@ Select.defaultProps = {
 }
 
 Select.propTypes = {
-  options: PropTypes.shape({
+  options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
-  }),
+  })),
   isDisabled: PropTypes.bool
 }
 
