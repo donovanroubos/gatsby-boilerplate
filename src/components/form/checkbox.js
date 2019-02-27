@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+// Utils
+import { generateId } from '../../utils'
 
 class Checkbox extends Component {
   constructor(props) {
@@ -7,38 +11,47 @@ class Checkbox extends Component {
     this.state = {
       isChecked: false
     }
-
-    this.toggleCheck = this.toggleCheck.bind(this)
-
-    this.id = Math.random().toString().replace(/0\./, '')
   }
 
-  toggleCheck() {
+  toggleCheck = () => {
     const { isChecked } = this.state
-    const { disabled } = this.props
+    const { isDisabled } = this.props
 
-    !disabled && this.setState({ isChecked: !isChecked })
+    if (!isDisabled) {
+      this.setState({ isChecked: !isChecked })
+    }
   }
 
   render() {
-
     const { isChecked } = this.state
-    const { label, disabled } = this.props
+    const { label, isDisabled } = this.props
+
+    const id = generateId()
 
     return (
       <div className="checkbox-wrapper">
         {
           typeof label !== 'undefined' && (
-            <label htmlFor={this.id} className={`${disabled ? 'disabled' : ''}`}>{label}</label>
+            <label
+              htmlFor={id}
+              className={`${isDisabled ? 'disabled' : ''}`}
+            >
+              {label}
+            </label>
           )
         }
         <div className="checkbox" onClick={this.toggleCheck}>
-          <input id={this.id} type="checkbox" checked={isChecked} disabled={disabled} />
+          <input id={id} type="checkbox" checked={isChecked} disabled={isDisabled} />
           <span>&#10003;</span>
         </div>
       </div>
     )
   }
+}
+
+Checkbox.propTypes = {
+  isDisabled: PropTypes.bool,
+  label: PropTypes.string
 }
 
 export default Checkbox

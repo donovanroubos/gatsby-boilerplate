@@ -1,4 +1,5 @@
 .style-guide {
+
   .block {
     padding: 32px 0;
     margin: 0 32px;
@@ -16,6 +17,7 @@
     .checkbox-wrapper,
     .radio-option-wrapper,
     .select {
+
       &:not(:last-child) {
         margin-bottom: 8px;
       }

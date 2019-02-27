@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+// Utils
+import { generateId } from '../../utils'
 
 class RadioOption extends Component {
   constructor(props) {
@@ -6,25 +10,34 @@ class RadioOption extends Component {
 
     this.toggleCheck = this.toggleCheck.bind(this)
 
-    this.id = Math.random().toString().replace(/0\./, '')
+    this.radio = React.createRef()
   }
 
   toggleCheck() {
-    const { disabled } = this.props
+    const { isDisabled } = this.props
 
-    !disabled && (this.refs.radio.checked = true)
+    if (!isDisabled) {
+      this.radio.current.checked = true
+    }
   }
 
   render() {
-    const { label, disabled, name, value } = this.props
+    const {
+      name,
+      label,
+      value,
+      isDisabled
+    } = this.props
+
+    const id = generateId()
 
     return (
       <div className="radio-option-wrapper">
         {
           typeof label !== 'undefined' && (
             <label
-              htmlFor={this.id}
-              className={`${disabled ? 'disabled' : ''}`}
+              htmlFor={id}
+              className={`${isDisabled ? 'disabled' : ''}`}
               onClick={this.toggleCheck}
             >
               {label}
@@ -33,18 +46,25 @@ class RadioOption extends Component {
         }
         <div className="radio-option" onClick={this.toggleCheck}>
           <input
-            ref="radio"
-            id={this.id}
+            ref={this.radio}
+            id={id}
             type="radio"
-            disabled={disabled}
+            disabled={isDisabled}
             name={name}
             value={value}
           />
-          <span></span>
+          <span />
         </div>
       </div>
     )
   }
+}
+
+RadioOption.propTypes = {
+  isDisabled: PropTypes.bool,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string
 }
 
 export default RadioOption

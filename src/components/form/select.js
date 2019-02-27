@@ -19,25 +19,25 @@ class Select extends React.Component {
   }
 
   render() {
-    const { options, disabled } = this.props
+    const { options, isDisabled } = this.props
     const { selectedValue } = this.state
 
     return (
-      <div className={`select ${disabled ? 'disabled' : ''}`}>
+      <div className={`select ${isDisabled ? 'disabled' : ''}`}>
         {selectedValue}
 
         <select
           className="select"
-          disabled={disabled}
-          onChange={(e) => this.handleChange(e)}
+          disabled={isDisabled}
+          onChange={e => this.handleChange(e)}
         >
-          <option value="Select one" selected >
+          <option value="Select one" selected>
             Select one
           </option>
           {
-            options.map(({ label ,value }) =>
-              <option value={value}>{label}</option>
-            )
+            options.map(({ label ,value }, idx) => (
+              <option value={value} key={idx}>{label}</option>
+            ))
           }
         </select>
 
@@ -64,10 +64,12 @@ Select.defaultProps = {
   ]
 }
 
-Select.PropTypes = {
+Select.propTypes = {
   options: PropTypes.shape({
-    value: PropTypes.string.isRequired
-  }).isRequired
+    label: PropTypes.string,
+    value: PropTypes.string
+  }),
+  isDisabled: PropTypes.bool
 }
 
 export default Select

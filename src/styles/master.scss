@@ -1,22 +1,21 @@
 /* Base */
-@import './base/variables';
-@import './base/reset';
-@import './base/base';
+@import "./base/variables";
+@import "./base/reset";
+@import "./base/base";
 
 /* Helpers */
-@import './helpers/animations';
-@import './helpers/mixins';
+@import "./helpers/animations";
+@import "./helpers/mixins";
 
 /* Pages */
-@import './pages/404';
-@import './pages/component-library';
+@import "./pages/404";
+@import "./pages/component-library";
 
 /* Components */
-@import './components/header';
-@import './components/footer';
-@import './components/button';
-
-@import './components/form/input';
-@import './components/form/checkbox';
-@import './components/form/radio-option';
-@import './components/form/select';
+@import "./components/header";
+@import "./components/footer";
+@import "./components/button";
+@import "./components/form/input";
+@import "./components/form/checkbox";
+@import "./components/form/radio-option";
+@import "./components/form/select";
